@@ -1,0 +1,241 @@
+/**index.wxss**/
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx 30rpx 160rpx;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20rpx;
+  padding: 10rpx 0 20rpx;
+  width: 100%;
+}
+
+.logo {
+  width: 180rpx;
+  height: 180rpx;
+  margin-bottom: 10rpx;
+}
+
+.title {
+  font-size: 46rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+}
+
+.content-area {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.upload-card, .occasion-card {
+  width: 100%;
+}
+
+.upload-area {
+  height: 320rpx;
+  border: 2rpx dashed #ddd;
+  border-radius: 12rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20rpx 0;
+  position: relative;
+  overflow: hidden;
+  min-height: 280rpx;
+  max-height: 35vw;
+  background-color: #fafafa;
+}
+
+.upload-icon {
+  width: 120rpx;
+  height: 120rpx;
+  margin-bottom: 20rpx;
+  transition: all 0.3s ease;
+}
+
+.upload-text {
+  color: #5677fc;
+  font-size: 32rpx;
+  font-weight: 500;
+  text-align: center;
+  padding: 0 20rpx;
+}
+
+.upload-area:active .upload-icon {
+  transform: scale(1.1);
+}
+
+.preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reupload-btn {
+  text-align: center;
+  color: #5677fc;
+  font-size: 28rpx;
+  margin-top: 10rpx;
+  padding: 10rpx;
+  min-height: 44rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.picker {
+  height: 80rpx;
+  background-color: #f9f9f9;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 88rpx;
+}
+
+.picker-text {
+  font-size: 30rpx;
+  color: #333;
+  flex: 1;
+}
+
+.picker-arrow {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 10rpx;
+  flex-shrink: 0;
+}
+
+.analyze-btn {
+  width: 100%;
+  margin: 0;
+  height: 88rpx;
+  line-height: 88rpx;
+  padding: 0;
+  font-size: 36rpx;
+  background-color: #07c160;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 6rpx 16rpx rgba(7, 193, 96, 0.3);
+  border-radius: 44rpx;
+  position: relative;
+  z-index: 10;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.analyze-btn.disabled {
+  background-color: #cccccc;
+  color: #999999;
+  box-shadow: none;
+  animation: none;
+}
+
+.tips {
+  margin-top: 20rpx;
+  width: 100%;
+  padding-bottom: 20rpx;
+}
+
+.tip-item {
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 10rpx;
+  text-align: center;
+}
+
+.bottom-button-container {
+  width: 100%;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 -4rpx 10rpx rgba(0, 0, 0, 0.05);
+  z-index: 100;
+  padding-bottom: calc(constant(safe-area-inset-bottom) + 20rpx);
+  padding-bottom: calc(env(safe-area-inset-bottom) + 20rpx);
+  animation: slideUp 0.3s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .upload-area {
+    height: 280rpx;
+    max-height: 25vw;
+  }
+  
+  .header {
+    padding: 10rpx 0;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .title {
+    color: #eee;
+  }
+  
+  .subtitle {
+    color: #aaa;
+  }
+  
+  .upload-area {
+    border-color: #555;
+  }
+  
+  .upload-text {
+    color: #aaa;
+  }
+  
+  .picker {
+    background-color: #444;
+  }
+  
+  .picker-text {
+    color: #eee;
+  }
+  
+  .tip-item {
+    color: #aaa;
+  }
+  
+  .bottom-button-container {
+    background-color: rgba(34, 34, 34, 0.9);
+  }
+} 

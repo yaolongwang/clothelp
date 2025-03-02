@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="32" fill="#f2f3f5" fill-opacity="0.4"/>
+  
+  <!-- 衣服轮廓 -->
+  <path d="M22 36L28 24H36L42 36H38L36 46H28L26 46H22L22 36Z" fill="#e8f0ff" stroke="#5677fc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- 衣领 -->
+  <path d="M28 24L32 28L36 24" stroke="#5677fc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- 上传箭头 -->
+  <path d="M32 20V14" stroke="#5677fc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M28 18L32 14L36 18" stroke="#5677fc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- 衣服纽扣 -->
+  <circle cx="32" cy="34" r="1.5" fill="#5677fc"/>
+  <circle cx="32" cy="40" r="1.5" fill="#5677fc"/>
+</svg> 

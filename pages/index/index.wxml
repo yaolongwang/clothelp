@@ -1,0 +1,39 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="header">
+    <image class="logo" src="/assets/logo.svg" mode="aspectFit"></image>
+    <view class="title">穿搭助手</view>
+    <view class="subtitle">上传照片，获取穿搭建议</view>
+  </view>
+
+  <view class="content-area">
+    <view class="card upload-card">
+      <view class="upload-area" bindtap="chooseImage">
+        <image wx:if="{{!tempImagePath}}" class="upload-icon" src="/assets/upload-icon.svg" mode="aspectFit"></image>
+        <view wx:if="{{!tempImagePath}}" class="upload-text">点击上传穿搭照片</view>
+        <image wx:else class="preview-image" src="{{tempImagePath}}" mode="aspectFit"></image>
+      </view>
+      <view wx:if="{{tempImagePath}}" class="reupload-btn" bindtap="chooseImage">重新上传</view>
+    </view>
+
+    <view class="card occasion-card">
+      <view class="section-title">选择场合</view>
+      <picker bindchange="bindOccasionChange" value="{{occasionIndex}}" range="{{occasions}}">
+        <view class="picker">
+          <view class="picker-text">{{occasions[occasionIndex]}}</view>
+          <image class="picker-arrow" src="/assets/arrow-down.png" mode="aspectFit"></image>
+        </view>
+      </picker>
+    </view>
+
+    <view class="tips">
+      <view class="tip-item">提示：请上传清晰的全身照，效果更佳</view>
+      <view class="tip-item">本应用不会保存您的照片，请放心使用</view>
+    </view>
+  </view>
+</view>
+
+<!-- 固定在底部的分析按钮 -->
+<view class="bottom-button-container" wx:if="{{tempImagePath}}">
+  <button class="btn-primary analyze-btn" bindtap="analyzeOutfit">分析穿搭</button>
+</view> 

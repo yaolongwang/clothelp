@@ -1,0 +1,287 @@
+/**result.wxss**/
+.result-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 30rpx;
+  padding: 20rpx 0;
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
+}
+
+.back-btn {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10rpx;
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.result-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+.image-card {
+  width: 100%;
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 16rpx;
+}
+
+.outfit-image {
+  width: 100%;
+  height: 600rpx;
+  object-fit: cover;
+  max-height: 70vw;
+  min-height: 450rpx;
+}
+
+.occasion-tag {
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 6rpx 20rpx;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  margin-right: constant(safe-area-inset-right);
+  margin-right: env(safe-area-inset-right);
+}
+
+/* 评分区域改为居中不带框的样式 */
+.score-section {
+  width: 100%;
+  padding: 30rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.score-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+  text-align: center;
+}
+
+.score-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.score-number {
+  font-size: 120rpx;
+  font-weight: bold;
+  color: #5677fc;
+  line-height: 1;
+  /* 发光效果 */
+  text-shadow: 0 0 20rpx rgba(86, 119, 252, 0.3);
+}
+
+.score-max {
+  font-size: 36rpx;
+  color: #999;
+  margin-left: 8rpx;
+  align-self: flex-end;
+  margin-bottom: 30rpx;
+}
+
+.star-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20rpx;
+  width: 100%;
+}
+
+.star {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 0 6rpx;
+}
+
+.star.animate {
+  animation: star-animation 0.5s ease forwards;
+  opacity: 0;
+  transform: scale(0);
+}
+
+@keyframes star-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-45deg);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.2) rotate(20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+/* 彩纸礼花动画样式 */
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 99;
+  overflow: hidden;
+}
+
+.confetti-item {
+  position: absolute;
+  top: -20rpx;
+  width: 16rpx;
+  height: 16rpx;
+  background-color: #ff6b6b;
+  opacity: 0.8;
+  border-radius: 4rpx;
+  animation: confetti-fall 6s linear forwards;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.8;
+  }
+  25% {
+    transform: translateY(25vh) rotate(90deg) translateX(20rpx);
+  }
+  50% {
+    transform: translateY(50vh) rotate(180deg) translateX(-20rpx);
+  }
+  75% {
+    transform: translateY(75vh) rotate(270deg) translateX(20rpx);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.feedback-card {
+  width: 100%;
+  margin-top: 30rpx;
+  box-sizing: border-box;
+}
+
+.feedback-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+  text-align: center;
+}
+
+.feedback-content {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.6;
+  word-wrap: break-word;
+  word-break: break-all;
+  padding: 0 10rpx;
+}
+
+/* 改进建议卡片样式 */
+.suggestion-card {
+  width: 100%;
+  margin-top: 30rpx;
+  box-sizing: border-box;
+  background-color: #f9f7f2; /* 轻微不同的背景色 */
+  border-left: 8rpx solid #f0ad4e; /* 左侧边框，突出建议性质 */
+}
+
+.suggestion-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #f0ad4e; /* 橙色，表示建议 */
+  margin-bottom: 20rpx;
+  text-align: center;
+}
+
+.suggestion-content {
+  font-size: 32rpx;
+  color: #333;
+  line-height: 1.8;
+  word-wrap: break-word;
+  word-break: break-all;
+  padding: 0 15rpx;
+  font-weight: 500; /* 稍微加粗 */
+}
+
+.share-btn, .home-btn {
+  width: 100%;
+  margin-top: 30rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  padding: 0;
+  font-size: 34rpx;
+}
+
+.home-btn {
+  background-color: #f5f5f5;
+  color: #333;
+  margin-bottom: constant(safe-area-inset-bottom);
+  margin-bottom: env(safe-area-inset-bottom);
+}
+
+@media screen and (orientation: landscape) {
+  .outfit-image {
+    height: 450rpx;
+    max-height: 50vw;
+  }
+  
+  .score-number {
+    font-size: 100rpx;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .result-title {
+    color: #eee;
+  }
+  
+  .score-title {
+    color: #eee;
+  }
+  
+  .feedback-title {
+    color: #eee;
+  }
+  
+  .feedback-content {
+    color: #bbb;
+  }
+  
+  .home-btn {
+    background-color: #333;
+    color: #eee;
+  }
+} 

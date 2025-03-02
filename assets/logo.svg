@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 圆形背景 -->
+  <circle cx="60" cy="60" r="60" fill="#5677fc" fill-opacity="0.1"/>
+  
+  <!-- 左侧衣架 -->
+  <path d="M30 30C30 25 55 25 60 35C65 25 90 25 90 30L75 50H45L30 30Z" fill="#5677fc" stroke="#5677fc" stroke-width="2"/>
+  
+  <!-- 衣架钩子 -->
+  <path d="M60 20V35" stroke="#5677fc" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="60" cy="18" r="4" fill="#5677fc"/>
+  
+  <!-- T恤 -->
+  <path d="M42 50L38 90H82L78 50" stroke="#5677fc" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M42 50H78" stroke="#5677fc" stroke-width="3"/>
+  
+  <!-- 衣服领口 -->
+  <path d="M53 50V60C53 65 67 65 67 60V50" stroke="#5677fc" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- 装饰线条 -->
+  <path d="M55 75H65" stroke="#5677fc" stroke-width="2" stroke-linecap="round"/>
+  <path d="M52 82H68" stroke="#5677fc" stroke-width="2" stroke-linecap="round"/>
+</svg> 

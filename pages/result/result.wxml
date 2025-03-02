@@ -1,0 +1,53 @@
+<!--result.wxml-->
+<view class="container">
+  <view class="result-header">
+    <view class="back-btn" bindtap="backToHome">
+      <image class="back-icon" src="/assets/back-icon.svg" mode="aspectFit"></image>
+    </view>
+    <view class="result-title">穿搭分析结果</view>
+  </view>
+
+  <view class="card image-card">
+    <image class="outfit-image" src="{{imagePath}}" mode="aspectFit"></image>
+    <view class="occasion-tag">{{occasion}}</view>
+  </view>
+
+  <view class="score-section">
+    <view class="score-title">评分</view>
+    <view class="score-value">
+      <text class="score-number">{{score}}</text>
+      <text class="score-max">/10</text>
+    </view>
+    
+    <view class="star-container">
+      <block wx:for="{{scoreStars}}" wx:key="index">
+        <image 
+          class="star {{item.class}}" 
+          src="{{item.src}}" 
+          style="animation-delay: {{index * 100}}ms;"
+          mode="aspectFit">
+        </image>
+      </block>
+    </view>
+  </view>
+
+  <view class="confetti-container" wx:if="{{score >= 7}}">
+    <view wx:for="{{confettiItems}}" wx:key="index" 
+          class="confetti-item" 
+          style="left: {{item.left}}rpx; animation-delay: {{item.delay}}s; background-color: {{item.color}};">
+    </view>
+  </view>
+
+  <view class="card feedback-card">
+    <view class="feedback-title">穿搭优缺点</view>
+    <rich-text class="feedback-content" nodes="{{advantagesHtml}}"></rich-text>
+  </view>
+  
+  <view class="card suggestion-card">
+    <view class="suggestion-title">改进建议</view>
+    <rich-text class="suggestion-content" nodes="{{suggestionsHtml}}"></rich-text>
+  </view>
+
+  <button class="btn-primary share-btn" bindtap="shareResult" open-type="share">分享结果</button>
+  <button class="btn-primary home-btn" bindtap="backToHome">重新分析</button>
+</view> 
