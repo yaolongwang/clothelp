@@ -41,11 +41,12 @@
     },
     "compileType": "miniprogram",
     "libVersion": "2.19.4",
-    "appid": "wx414688ec560c2f3c",
+    "appid": "wx46d44b1c20d039f5",
     "projectname": "clothelp",
     "condition": {},
     "editorSetting": {
         "tabIndent": "insertSpaces",
         "tabSize": 4
-    }
+    },
+    "cloudfunctionRoot": "cloudfunctions/"
 }
